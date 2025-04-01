@@ -24,6 +24,12 @@ jobs:
       run: dotnet build --no-restore ./src/dotnet-demoapp.csproj
     - name: Test
       run: dotnet test --no-build --verbosity normal ./src/dotnet-demoapp.csproj
+      
+    - name: verify the Nuget version
+      run: dotnet nuget --version
+      
+    - name: Install latest NuGet
+      run: dotnet tool install --global NuGet.CommandLine
     
     - name: Package the application
       run: dotnet pack --configuration Release --output ./nuget-packages ./src/dotnet-demoapp.csproj
