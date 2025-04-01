@@ -4,6 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>DotnetDemoapp</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>true</IsPackable>
 
     <Version>1.5.0</Version>
   </PropertyGroup>
