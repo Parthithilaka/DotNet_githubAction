@@ -33,7 +33,8 @@ jobs:
         dotnet nuget add source "http://3.111.23.62:8081/repository/nuget-group/" \
           --name "Nexus" \
           --username "${{ secrets.NEXUS_USERNAME }}" \
-          --password "${{ secrets.NEXUS_PASSWORD }}"
+          --password "${{ secrets.NEXUS_PASSWORD }}" \
+          --store-password-in-clear-text
 
     - name: Push NuGet package to Nexus
       run: dotnet nuget push ./nuget-packages/*.nupkg \
