@@ -6,8 +6,6 @@ name: .NET
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - "src/**"
  
 jobs:
   build:
@@ -21,7 +19,7 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore  ./src/dotnet-demoapp.csproj
     - name: Build
       run: dotnet build --no-restore
     - name: Test
