@@ -37,6 +37,5 @@ jobs:
           --store-password-in-clear-text
 
     - name: Push NuGet package to Nexus
-      run: dotnet nuget push ./nuget-packages/*.nupkg \
-        --source "http://3.111.23.62:8081/repository/nuget-group/" \
-        --api-key ${{ secrets.NEXUS_API_KEY }}
+      run: dotnet nuget push ./nuget-packages/*.nupkg --source "http://3.111.23.62:8081/repository/nuget-group/" --api-key ${{ secrets.NEXUS_API_KEY }}
+
