@@ -24,3 +24,12 @@ jobs:
       run: dotnet build --no-restore ./src/dotnet-demoapp.csproj
     - name: Test
       run: dotnet test --no-build --verbosity normal ./src/dotnet-demoapp.csproj
+    
+    - name: Package the application
+      run: dotnet pack --configuration Release --output ./nuget-packages ./src/dotnet-demoapp.csproj
+
+    - name: Push NuGet package to Nexus
+      run: dotnet nuget push ./nuget-packages/*.nupkg --source "Nexus" --api-key ${{ secrets.NEXUS_API_KEY }}
+      env:
+        NUGET_REPOSITORY_URL: "http://3.111.23.62:8081/repository/nuget-group/"
+      continue-on-error: false
