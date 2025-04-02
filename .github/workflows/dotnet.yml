@@ -46,7 +46,7 @@ jobs:
       run: ls -l ./nuget-packages
       
     - name: copy the package path
-      run : cp ./nuget-packages /usr/share/dotnet
+      run : cp -r ./nuget-packages /usr/share/dotnet
 
     - name: list the copied file
       run: ls -la /usr/share/dotnet
