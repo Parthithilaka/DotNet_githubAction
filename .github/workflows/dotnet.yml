@@ -33,12 +33,12 @@ jobs:
 
     - name: Configure NuGet for Nexus
       run: |
-        dotnet nuget add source "http://3.111.23.62:8081/repository/nuget-group/" \
+        dotnet nuget add source "http://3.111.23.62:8081/repository/nuget-hosted/" \
           --name "Nexus" \
           --username "${{ secrets.NEXUS_USERNAME }}" \
           --password "${{ secrets.NEXUS_PASSWORD }}" \
           --store-password-in-clear-text
 
     - name: Push NuGet package to Nexus
-      run: dotnet nuget push ./nuget-packages/*.nupkg --source "http://3.111.23.62:8081/repository/nuget-group/" --api-key ${{ secrets.NEXUS_API_KEY }}
+      run: dotnet nuget push ./nuget-packages/*.nupkg --source "http://3.111.23.62:8081/repository/nuget-hosted/" --api-key ${{ secrets.NEXUS_API_KEY }}
 
