@@ -49,7 +49,7 @@ jobs:
       run : cp -r ./nuget-packages /usr/share/dotnet
 
     - name: list the copied file
-      run: ls -la /usr/share/dotnet
+      run: ls -la /usr/share/dotnet/nuget-packages
     
     - name: Build and push
       uses: docker/build-push-action@v6
