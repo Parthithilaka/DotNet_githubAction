@@ -48,7 +48,7 @@ jobs:
     - name: Move NuGet Package to Build Context
       run: |
         mkdir -p ./build-packages
-        cp /usr/share/dotnet/nuget-packages/dotnet-demoapp.1.5.0.nupkg ./build-packages/
+        cp ./nuget-packages/dotnet-demoapp.1.5.0.nupkg ./build-packages/
 
     - name: list the copied file
       run: ls -la /usr/share/dotnet/nuget-packages
