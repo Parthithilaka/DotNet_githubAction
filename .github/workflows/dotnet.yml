@@ -51,7 +51,7 @@ jobs:
         cp ./nuget-packages/dotnet-demoapp.1.5.0.nupkg ./build-packages/
 
     - name: list the copied file
-      run: ls -la /usr/share/dotnet/nuget-packages
+      run: ls -la build-packages/*
     
     - name: Build and push
       uses: docker/build-push-action@v6
