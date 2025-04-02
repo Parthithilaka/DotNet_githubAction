@@ -65,7 +65,7 @@ jobs:
     
     - name: Build and push
       run :
-        docker build -t action_image:v1
+        docker build -t action_image:v1 .
         
     - name: list images
       run: docker images
