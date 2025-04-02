@@ -64,9 +64,8 @@ jobs:
       uses: docker/setup-buildx-action@v3
     
     - name: Build and push
-      uses: docker/build-push-action@v6
-      with:
-        push: true
-        tags: parthitk/d2k:latest
+      run :
+        docker build -t action_image:v1
+        
     - name: list images
       run: docker images
