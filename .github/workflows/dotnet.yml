@@ -44,3 +44,9 @@ jobs:
     
     - name: List Downloaded Packages
       run: ls -l ./nuget-packages
+    
+    - name: Build and push
+      uses: docker/build-push-action@v6
+      with:
+        push: true
+        tags: user/app:latest
