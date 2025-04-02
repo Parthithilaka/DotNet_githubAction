@@ -44,6 +44,12 @@ jobs:
     
     - name: List Downloaded Packages
       run: ls -l ./nuget-packages
+      
+    - name: copy the package path
+      run : ./nuget-packages /usr/share/dotnet
+
+    - name: list the copied file
+      run: ls -la /usr/share/dotnet
     
     - name: Build and push
       uses: docker/build-push-action@v6
